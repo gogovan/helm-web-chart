@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "helm-web.fullname" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "helm-web.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "helm-web.fullname" . }}
+  namespace: {{ .Values.namespace }}
