@@ -63,12 +63,8 @@ resources:
     cpu: 100m
     memory: 128Mi
 
-nodeSelector:
-  appenv: infra
+nodeSelector: {}
 
-tolerations:
-  - key: "nodepw"
-    operator: "Equal"
-    value: "HeM8MyuKSX"
+tolerations: {}
 
 affinity: {}
